@@ -14,3 +14,9 @@ First, you'll need a personal access token for the GitHub API. You can create on
 3. Click "Generate token" and copy the token value.
 
 Next, create a GitWrapper object with your access token:
+```python
+from gitconnect import GitWrapper
+
+access_token = 'your_access_token_here'
+
+wrapper = GitWrapper(access_token)
