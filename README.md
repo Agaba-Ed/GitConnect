@@ -20,6 +20,7 @@ from gitconnect import GitWrapper
 access_token = 'your_access_token_here'
 
 wrapper = GitWrapper(access_token)
+```
 
 Now, you can use the GitWrapper methods to interact with the GitHub API.
 
@@ -32,6 +33,7 @@ user_name ="the_git_user_name"
 repos = wrapper.search_repos_by_user(user_name, "python")
 for repo in repos:
     print(repo.name)
+```
 
 ## Example 2: Get details about a specific repository
 ```python
@@ -42,5 +44,5 @@ user_name ="the_git_user_name"
 repo = wrapper.get_repo(user_name, "hello-world")
 print(repo.name)
 print(repo.description)
-
+```
 
