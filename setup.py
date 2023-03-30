@@ -6,7 +6,7 @@ setup(
     description='A Python wrapper for the GitHub API',
     author='Ed',
     author_email='ed.a9a6a@gmail.com',
-    packages=['connect'],
+    packages=['gitconnect'],
     install_requires=['requests'],
     classifiers=[
         'Development Status :: 3 - Alpha',
