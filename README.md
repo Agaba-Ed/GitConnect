@@ -46,3 +46,20 @@ print(repo.name)
 print(repo.description)
 ```
 
+For more information on how to use GitConnect, please refer to the documentation.
+
+## Contributing
+
+If you would like to contribute to GitConnect, please follow these steps:
+
+1. Fork the repository and clone it to your local machine.
+2. Create a new branch for your feature or bug fix.
+3. Write code and tests for your feature or bug fix.
+4. Run tests using pytest to make sure everything works.
+5. Push your changes to your forked repository.
+6. Create a pull request to the original repository.
+
+## License
+
+GitConnect is licensed under the MIT License. See LICENSE for more information.
+
