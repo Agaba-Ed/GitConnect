@@ -1,8 +1,4 @@
-# Ignore all files
-*
-
-# Except the gitconnect module
-!gitconnect/
-
-# Ignore the __pycache__ directory within the gitconnect module
-gitconnect/__pycache__/
+# Ignore build distribution files
+dist/
+build/
+*.egg-info/
