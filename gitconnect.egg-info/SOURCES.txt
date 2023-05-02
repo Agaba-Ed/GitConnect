@@ -1,5 +1,6 @@
+README.md
 setup.py
-gitconnect/GithubAPI.py
+gitconnect/GitWrapper.py
 gitconnect/__init__.py
 gitconnect.egg-info/PKG-INFO
 gitconnect.egg-info/SOURCES.txt
