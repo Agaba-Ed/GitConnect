@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='gitconnect',
-    version='0.1.0',
+    version='0.1.1',
     description='A Python wrapper for the GitHub API',
     author='Ed',
     author_email='ed.a9a6a@gmail.com',
