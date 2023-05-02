@@ -1,4 +1,8 @@
-/gitconnect.egg-info
-/build
-/dist
-/gitconnect/__pycache__
+# Ignore all files
+*
+
+# Except the gitconnect module
+!gitconnect/
+
+# Ignore the __pycache__ directory within the gitconnect module
+gitconnect/__pycache__/
