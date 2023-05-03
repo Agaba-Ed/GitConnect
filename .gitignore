@@ -3,3 +3,5 @@ dist/
 build/
 *.egg-info/
 gitconnect/__pycache__/
+.env
+gitconnect/tests/__pycache__/
