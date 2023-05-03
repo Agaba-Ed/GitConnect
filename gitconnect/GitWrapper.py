@@ -80,3 +80,57 @@ class GitWrapper:
         endpoint = f'/search/repositories?q=user:{username}+{query}&sort={sort}&order={order}'
         response = self._get(endpoint)
         return response['items']
+    
+
+    def get_commits(self, owner: str, repo_name: str, branch: str = 'master') -> list:
+        """
+        Get a list of commits for a given repository and branch.
+
+        :param owner: The username or organization that owns the repository.
+        :str
+        :param repo_name: The name of the repository.
+        :type repo_name: str
+        :param branch: The name of the branch to get commits for. Defaults to 'master'.
+        :type branch: str
+        :return: A list of dictionaries containing information about the commits.
+        """
+        endpoint = f'/repos/{owner}/{repo_name}/commits'
+        params = {'sha': branch}
+        response = self._get(endpoint, params)
+        return response
+
+    def get_commit_files(self, owner: str, repo_name: str, sha: str) -> list:
+        """
+        Get a list of files changed in a given commit.
+        :param owner: The username or organization that owns the repository.
+        :type owner: str
+        :param repo_name: The name of the repository.
+        :type repo_name: str
+        :param sha: The SHA hash of the commit to get files for.
+        :type sha: str
+        :return: A list of dictionaries containing information about the files.
+        """
+        endpoint = f'/repos/{owner}/{repo_name}/commits/{sha}'
+        response = self._get(endpoint)
+        return response['files']
+
+    def get_commit_file_content(self, owner: str, repo_name: str, path: str, sha: str) -> str:
+        """
+        Get the content of a file changed in a given commit.
+
+        :param owner: The username or organization that owns the repository.
+        :type owner: str
+        :param repo_name: The name of the repository.
+        :type repo_name: str
+        :param path: The path to the file to get content for.
+        :type path: str
+        :param sha: The SHA hash of the commit the file was changed in.
+        :type sha: str
+        :return: The content of the file.
+        """
+        endpoint = f'/repos/{owner}/{repo_name}/contents/{path}'
+        params = {'ref': sha}
+        response = self._get(endpoint, params)
+        return response['content']
+    
+
