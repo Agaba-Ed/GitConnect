@@ -59,3 +59,11 @@ def test_get_commit_file_content(git_wrapper):
     file_path = 'blob/main/setup.py'
     content = git_wrapper.get_commit_file_content(owner, repo_name, sha, file_path)
     assert content.startswith('"""pytest plugins.') 
+
+
+def test_get_source_files(git_wrapper):
+    owner = 'pytest-dev'
+    repo_name = 'pytest'
+    file_extensions = ['.py']
+    source_files = git_wrapper.get_source_files(owner, repo_name, file_extensions)
+    assert len(source_files) > 0
