@@ -81,23 +81,19 @@ class GitWrapper:
         response = self._get(endpoint)
         return response['items']
     
-
-    def get_commits(self, owner: str, repo_name: str, branch: str = 'master') -> list:
+    def get_commits(self, owner: str, repo_name: str) -> list:
         """
-        Get a list of commits for a given repository and branch.
+        Get a list of commits for a GitHub repository.
 
         :param owner: The username or organization that owns the repository.
-        :str
+        :type owner: str
         :param repo_name: The name of the repository.
         :type repo_name: str
-        :param branch: The name of the branch to get commits for. Defaults to 'master'.
-        :type branch: str
         :return: A list of dictionaries containing information about the commits.
         """
         endpoint = f'/repos/{owner}/{repo_name}/commits'
-        params = {'sha': branch}
-        response = self._get(endpoint, params)
-        return response
+        return self._get(endpoint)
+
 
     def get_commit_files(self, owner: str, repo_name: str, sha: str) -> list:
         """
