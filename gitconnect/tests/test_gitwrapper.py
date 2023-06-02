@@ -31,7 +31,7 @@ def test_search_repos(git_wrapper):
 
 def test_search_user_repos(git_wrapper):
     username = 'octocat'
-    query = 'python'
+    query = 'language:py'
     results = git_wrapper.search_user_repos(username, query)
     assert len(results) > 0
 
@@ -47,7 +47,7 @@ def test_get_commits(git_wrapper):
 def test_get_commit_files(git_wrapper):
     owner = 'pytest-dev'
     repo_name = 'pytest'
-    sha = '225d245a36b33f51f9b4497f8d06438a7f1ef91a'
+    sha = '07eeeb8dfc82de289565a57880ca08b0eac4462d'
     files = git_wrapper.get_commit_files(owner, repo_name, sha)
     assert len(files) > 0
 
@@ -55,7 +55,7 @@ def test_get_commit_files(git_wrapper):
 def test_get_commit_file_content(git_wrapper):
     owner = 'pytest-dev'
     repo_name = 'pytest'
-    sha = '225d245a36b33f51f9b4497f8d06438a7f1ef91a'
-    file_path = 'pytest/plugins/__init__.py'
+    sha = '07eeeb8dfc82de289565a57880ca08b0eac4462d'
+    file_path = 'blob/main/setup.py'
     content = git_wrapper.get_commit_file_content(owner, repo_name, sha, file_path)
     assert content.startswith('"""pytest plugins.') 

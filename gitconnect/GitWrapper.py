@@ -134,3 +134,26 @@ class GitWrapper:
         return response['content']
     
 
+    def get_source_files(self, owner: str, repo_name: str, file_extensions: list) -> list:
+        """
+        Get a list of source files with the specified file extensions for a given repository.
+
+        :param owner: The username or organization that owns the repository.
+        :type owner: str
+        :param repo_name: The name of the repository.
+        :type repo_name: str
+        :param file_extensions: The list of file extensions to filter for.
+        :type file_extensions: list
+        :return: A list of dictionaries containing information about the source files.
+        """
+        endpoint = f'/repos/{owner}/{repo_name}/contents'
+        response = self._get(endpoint)
+        source_files = []
+
+        for file in response:
+            if file['type'] == 'file' and any(file['name'].endswith(ext) for ext in file_extensions):
+                source_files.append(file)
+
+        return source_files
+    
+
