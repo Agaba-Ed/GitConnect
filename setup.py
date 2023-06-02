@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='gitconnect',
-    version='0.1.3',
+    version='0.1.4',
     description='A Python wrapper for the GitHub API',
     author='Ed',
     author_email='ed.a9a6a@gmail.com',
@@ -17,5 +17,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11'
     ],
 )
